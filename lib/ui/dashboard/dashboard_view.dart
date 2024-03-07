@@ -9,7 +9,7 @@ import 'dashboard_controller.dart';
 
 class DashboardPage extends GetView<DashboardController> {
   @override
-  final controller = Get.put(DashboardController());
+  //final controller = Get.put(DashboardController());
 
   const DashboardPage({super.key});
   @override

@@ -20,7 +20,7 @@ import '../ui/reset_password/reset_password_view.dart';
 import '../ui/reset_password/update_password_view.dart';
 import '../ui/reset_password/verification_view.dart';
 import '../ui/saved/saved_view.dart';
-import '../ui/setting/setting_view.dart';
+//import '../ui/setting/setting_view.dart';
 import '../ui/signup/signup_view.dart';
 
 appRoutes() => [
@@ -98,10 +98,10 @@ appRoutes() => [
         name: '/groups',
         page: () => GroupPage(),
         transitionDuration: const Duration(milliseconds: 500),
-      ),GetPage(
-        name: '/setting',
-        page: () => SettingPage(),
-        transitionDuration: const Duration(milliseconds: 500),
+      //),GetPage(
+        //name: '/setting',
+        //page: () => SettingPage(),
+       // transitionDuration: const Duration(milliseconds: 500),
       ),
     ];
 
