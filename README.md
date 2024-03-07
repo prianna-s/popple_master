@@ -8,7 +8,14 @@ This project is a starting point for a Flutter application.
 
 To get started with this project, follow these steps:
 
-3. **Clone the Repository:**
+0. **Make sure Flutter is up-to-date:**
+   - Run:
+     ```bash
+     flutter upgrade
+     flutter pub upgrade
+     ```
+     
+2. **Clone the Repository:**
    - Copy the URL of the repository
    - Open a terminal or command prompt.
    - Navigate to the directory where you want to clone the repository.
@@ -17,26 +24,30 @@ To get started with this project, follow these steps:
      git clone <repository-url>
      ```
 
-4. **Navigate to the Repository:**
+3. **Navigate to the Repository:**
    - Navigate into the cloned repository directory using the following command:
      ```bash
      cd POPPLE-MASTER
      ```
 
-5. **Set Up Flutter:**
+4. **Set Up Flutter:**
    - Run the following command to set up all flutter packages:
      ```bash
      flutter pub get
      ```
    - Follow any additional prompts provided by Flutter CLI to complete the setup.
 
-6. **Run the Flutter Project:**
-   - Execute the following command to build and run the Flutter project on an available device or emulator:
+5. **Start Developing:**
+   - Open VSCode
+   - Navigate to main.dart
+   - Select iPhone simulator on lower right, and hit "play"
+   - Running into problems with Cocopods? Go to terminal, navigate to the ios folder, and try this:
      ```bash
-     flutter run
+     sudo gem install cocoapods
+     pod install
      ```
 
-7. **Start Developing:**
+6. **Start Developing:**
    - Open the project in your preferred code editor and start writing code.
 
 8. **Commit and Push Changes:**
