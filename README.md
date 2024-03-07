@@ -12,7 +12,6 @@ To get started with this project, follow these steps:
    - Run:
      ```bash
      flutter upgrade
-     flutter pub upgrade
      ```
      
 2. **Clone the Repository:**
@@ -34,6 +33,7 @@ To get started with this project, follow these steps:
    - Run the following command to set up all flutter packages:
      ```bash
      flutter pub get
+     flutter pub upgrade
      ```
    - Follow any additional prompts provided by Flutter CLI to complete the setup.
 
