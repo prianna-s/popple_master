@@ -26,7 +26,7 @@ To get started with this project, follow these steps:
 3. **Navigate to the Repository:**
    - Navigate into the cloned repository directory using the following command:
      ```bash
-     cd POPPLE-MASTER
+     cd popple_master
      ```
 
 4. **Set Up Flutter:**
