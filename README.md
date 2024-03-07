@@ -6,6 +6,51 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
+To get started with this project, follow these steps:
+
+3. **Clone the Repository:**
+   - Copy the URL of the repository
+   - Open a terminal or command prompt.
+   - Navigate to the directory where you want to clone the repository.
+   - Run the following command:
+     ```bash
+     git clone <repository-url>
+     ```
+
+4. **Navigate to the Repository:**
+   - Navigate into the cloned repository directory using the following command:
+     ```bash
+     cd POPPLE-MASTER
+     ```
+
+5. **Set Up Flutter:**
+   - Run the following command to set up all flutter packages:
+     ```bash
+     flutter pub get
+     ```
+   - Follow any additional prompts provided by Flutter CLI to complete the setup.
+
+6. **Run the Flutter Project:**
+   - Execute the following command to build and run the Flutter project on an available device or emulator:
+     ```bash
+     flutter run
+     ```
+
+7. **Start Developing:**
+   - Open the project in your preferred code editor and start writing code.
+
+8. **Commit and Push Changes:**
+   - Make changes to your Flutter project.
+   - Commit changes using the following commands:
+     ```bash
+     git add .
+     git commit -m "Your commit message"
+     ```
+   - Push changes to your GitHub repository using the following command:
+     ```bash
+     git push origin master
+     ```
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
