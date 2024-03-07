@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:popple/Models/category_response.dart';
 import 'package:popple/Models/interest_response.dart';
 import 'package:popple/ext/hex_color.dart';
 import 'package:popple/ui/explore/explore_controller.dart';
@@ -12,15 +11,14 @@ import 'package:popple/ui/widgets/sub_txt_widget.dart';
 import '../../../Constant/color_const.dart';
 import '../../../generated/assets.dart';
 import '../../../generated/l10n.dart';
-import '../../dashboard/dashboard_controller.dart';
 import '../../widgets/button_primary_widget.dart';
 
 class FilterWidget extends StatelessWidget {
-  FilterWidget();
+  const FilterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final _con = Get.put(ExploreController());
+    final con = Get.put(ExploreController());
     return StatefulBuilder(
       builder: (context, setState) {
         return Container(
@@ -50,14 +48,14 @@ class FilterWidget extends StatelessWidget {
                     height: 70,
                     child: ListView.builder(
                       itemBuilder: (context, index) {
-                        Interest data=_con.interestList[index];
+                        Interest data=con.interestList[index];
                         return Column(
                           children: [
                             Container(
                               height: 50,
                               width: 50,
                               margin: const EdgeInsets.symmetric(horizontal: 8),
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: data.selected!?primaryColorCode:data.colorCode!.toColor(),width: 2),
@@ -68,8 +66,8 @@ class FilterWidget extends StatelessWidget {
                                     data.selected=false;
                                   });
                                 }else{
-                                _con.interestList.forEach((element) {
-                                  element.selected=false;});
+                                for (var element in con.interestList) {
+                                  element.selected=false;}
                                 setState((){
                                   data.selected=true;
                                 });
@@ -83,7 +81,7 @@ class FilterWidget extends StatelessWidget {
                           ],
                         );
                       },
-                      itemCount: _con.interestList.length,
+                      itemCount: con.interestList.length,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                     ),
@@ -102,14 +100,14 @@ class FilterWidget extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(
                               vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
-                              color: _con.filterDay=="Today"?primaryColorCode:Colors.white,
+                              color: con.filterDay=="Today"?primaryColorCode:Colors.white,
                               borderRadius: const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: _con.filterDay=="Today"?primaryColorCode:color_E6E6E6, width: 1)),
-                          child: SubTxtWidget('Today',color: _con.filterDay=="Today"?Colors.white:textColor_12od26,),
+                              border: Border.all(color: con.filterDay=="Today"?primaryColorCode:color_E6E6E6, width: 1)),
+                          child: SubTxtWidget('Today',color: con.filterDay=="Today"?Colors.white:textColor_12od26,),
                         ),
                         onTap: (){
                           setState((){
-                            _con.filterDay="Today";
+                            con.filterDay="Today";
                           });
                         },
                       ),
@@ -120,14 +118,14 @@ class FilterWidget extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(
                               vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
-                              color: _con.filterDay=="Tomorrow"?primaryColorCode:Colors.white,
+                              color: con.filterDay=="Tomorrow"?primaryColorCode:Colors.white,
                               borderRadius: const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: _con.filterDay=="Tomorrow"?primaryColorCode:color_E6E6E6, width: 1)),
-                          child: SubTxtWidget('Tomorrow',color: _con.filterDay=="Tomorrow"?Colors.white:textColor_12od26,),
+                              border: Border.all(color: con.filterDay=="Tomorrow"?primaryColorCode:color_E6E6E6, width: 1)),
+                          child: SubTxtWidget('Tomorrow',color: con.filterDay=="Tomorrow"?Colors.white:textColor_12od26,),
                         ),
                         onTap: (){
                           setState((){
-                            _con.filterDay="Tomorrow";
+                            con.filterDay="Tomorrow";
                           });
                         },
                       ),
@@ -138,14 +136,14 @@ class FilterWidget extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(
                               vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
-                              color: _con.filterDay=="This week"?primaryColorCode:Colors.white,
+                              color: con.filterDay=="This week"?primaryColorCode:Colors.white,
                               borderRadius: const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: _con.filterDay=="This week"?primaryColorCode:color_E6E6E6, width: 1)),
-                          child: SubTxtWidget('This week',color: _con.filterDay=="This week"?Colors.white:textColor_12od26,),
+                              border: Border.all(color: con.filterDay=="This week"?primaryColorCode:color_E6E6E6, width: 1)),
+                          child: SubTxtWidget('This week',color: con.filterDay=="This week"?Colors.white:textColor_12od26,),
                         ),
                         onTap: (){
                           setState((){
-                            _con.filterDay="This week";
+                            con.filterDay="This week";
                           });
                         },
                       ),
@@ -156,9 +154,9 @@ class FilterWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 6),
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     decoration: BoxDecoration(
-                        color: _con.filterDay=="calender"?primaryColorCode:Colors.white,
+                        color: con.filterDay=="calender"?primaryColorCode:Colors.white,
                         borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(color: _con.filterDay=="calender"?primaryColorCode:color_E6E6E6, width: 1)),
+                        border: Border.all(color: con.filterDay=="calender"?primaryColorCode:color_E6E6E6, width: 1)),
                     child: InkWell(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +165,7 @@ class FilterWidget extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          SubTxtWidget('Choose from calender',color: _con.filterDay=="calender"?Colors.white:textColor_12od26,),
+                          SubTxtWidget('Choose from calender',color: con.filterDay=="calender"?Colors.white:textColor_12od26,),
                           const SizedBox(
                             width: 10,
                           ),
@@ -179,7 +177,7 @@ class FilterWidget extends StatelessWidget {
                       ),
                       onTap: (){
                         setState((){
-                          _con.filterDay="calender";
+                          con.filterDay="calender";
                         });
                       },
                     ),

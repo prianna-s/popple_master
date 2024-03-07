@@ -20,7 +20,7 @@ class ButtonPrimaryWidget extends StatelessWidget {
   bool isLoading;
   FontWeight? fontWeight;
   ButtonPrimaryWidget(this.title,
-      {this.fontSize = 16,
+      {super.key, this.fontSize = 16,
       this.onTap,
       this.leading,
       this.trailing,

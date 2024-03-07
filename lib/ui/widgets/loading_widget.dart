@@ -7,7 +7,7 @@ enum LoadingType{
 }
 class LoadingWidget extends StatelessWidget {
   LoadingType type;
-  LoadingWidget({this.type=LoadingType.LIST});
+  LoadingWidget({super.key, this.type=LoadingType.LIST});
   @override
   Widget build(BuildContext context) {
     if(type==LoadingType.LIST){
@@ -30,11 +30,11 @@ class LoadingWidget extends StatelessWidget {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
-          padding: EdgeInsets.all(8),
-          margin: EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.all(8),
+          margin: const EdgeInsets.symmetric(vertical: 5),
           child: ListTile(
             leading: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(40)),
+              borderRadius: const BorderRadius.all(Radius.circular(40)),
               child: Container(
                 width: 50,
                 height: 50,
@@ -44,7 +44,7 @@ class LoadingWidget extends StatelessWidget {
             title: Container(
               width: 100,
               height: 25,
-              margin: EdgeInsets.symmetric(vertical: 3),
+              margin: const EdgeInsets.symmetric(vertical: 3),
               color: Colors.grey,
             ),
             tileColor: Theme.of(context).cardColor,
@@ -62,8 +62,8 @@ class LoadingWidget extends StatelessWidget {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
-          padding: EdgeInsets.all(8),
-          margin: EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.all(8),
+          margin: const EdgeInsets.symmetric(vertical: 5),
           child: Column(
             children: [
               Row(
@@ -72,18 +72,18 @@ class LoadingWidget extends StatelessWidget {
                   Container(
                     width: 200,
                     height: 20,
-                    margin: EdgeInsets.symmetric(vertical: 3),
+                    margin: const EdgeInsets.symmetric(vertical: 3),
                     color: Colors.grey,
                   ),
                   Container(
                     width: 80,
                     height: 20,
-                    margin: EdgeInsets.symmetric(vertical: 3),
+                    margin: const EdgeInsets.symmetric(vertical: 3),
                     color: Colors.grey,
                   )
                 ],
               ),
-              Container(
+              SizedBox(
                 height: 180,
                 child: ListView.builder(itemBuilder: (context, index){
                   return Container(
@@ -93,7 +93,7 @@ class LoadingWidget extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       color: Colors.grey,
                     ),
-                    margin: EdgeInsets.only(
+                    margin: const EdgeInsets.only(
                       top: 5,
                       right: 10,
                       bottom: 5
@@ -118,7 +118,7 @@ class LoadingWidget extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 5),
             child: ListTile(
               leading: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
                 child: Container(
                   width: 100,
                   height: 100,
@@ -128,13 +128,13 @@ class LoadingWidget extends StatelessWidget {
               title: Container(
                 width: 80,
                 height: 25,
-                margin: EdgeInsets.symmetric(vertical: 3),
+                margin: const EdgeInsets.symmetric(vertical: 3),
                 color: Colors.grey,
               ),
               subtitle: Container(
                 width: 100,
                 height: 25,
-                margin: EdgeInsets.symmetric(vertical: 3),
+                margin: const EdgeInsets.symmetric(vertical: 3),
                 color: Colors.grey,
               ),
               tileColor: Theme.of(context).cardColor,

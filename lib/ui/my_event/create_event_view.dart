@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:google_maps_places_autocomplete_widgets/widgets/address_autocomp
 import 'package:popple/Constant/color_const.dart';
 import 'package:popple/Utils/tools.dart';
 import 'package:popple/ext/hex_color.dart';
-import 'package:popple/ui/my_event/widget/event_widget.dart';
 import 'package:popple/ui/widgets/input_widget.dart';
 import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
@@ -76,12 +74,12 @@ class CreateEventPage extends StatelessWidget {
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 1, color:color_E4DFDF),
+                  const BorderSide(width: 1, color:color_E4DFDF),
                   borderRadius: BorderRadius.circular(12.0), //<-- SEE HERE
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 1, color: color_E4DFDF),
+                  const BorderSide(width: 1, color: color_E4DFDF),
                   borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
@@ -101,11 +99,11 @@ class CreateEventPage extends StatelessWidget {
           title: "Date",
           child: InkWell(
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               alignment: AlignmentDirectional.centerStart,
               decoration: BoxDecoration(
                   border: Border.all(color: color_E4DFDF,width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
               child: SubTxtWidget(_con.date.value==null?"Select Date":Tools.changeDateFormat(_con.date.value.toString(), "dd-MM-yyyy")),
             ),
@@ -120,16 +118,16 @@ class CreateEventPage extends StatelessWidget {
           title: "Time",
           child: InkWell(
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               alignment: AlignmentDirectional.centerStart,
               decoration: BoxDecoration(
                   border: Border.all(color: color_E4DFDF,width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
               child: SubTxtWidget(_con.time.value==null?"Select Time":"${_con.time.value!.hour}:${_con.time.value!.minute} ${_con.time.value!.period.name}"),
             ),
             onTap: (){
-              showTimePicker(context: Get.context!, initialTime: TimeOfDay(hour: 00, minute: 00)).then((value){
+              showTimePicker(context: Get.context!, initialTime: const TimeOfDay(hour: 00, minute: 00)).then((value){
                 _con.time.value=value;
               });
             },
@@ -172,7 +170,7 @@ class CreateEventPage extends StatelessWidget {
           subtitle: SubTxtWidget('You won’t be displayed as the event organizer',fontSize: 12,fontWeight: FontWeight.w500,
             color: "#909090".toColor(),),),
         ListTile(
-          contentPadding: EdgeInsets.symmetric(horizontal: 5),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 5),
           title: SubTxtWidget("Copy join link",fontSize: 16,fontWeight: FontWeight.w500,),
           subtitle: SubTxtWidget('popple.web.app/xyz',fontSize: 12,fontWeight: FontWeight.w500,
             color: "#909090".toColor(),
@@ -194,10 +192,10 @@ class CreateEventPage extends StatelessWidget {
     if(_con.file.isEmpty){
       return InkWell(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          padding: EdgeInsets.all(30),
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.all(30),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               border: Border.all(color: color_615BC9,width: 1)
           ),
           child:_con.file.isNotEmpty?const Center(
@@ -223,7 +221,7 @@ class CreateEventPage extends StatelessWidget {
         child:Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: Image.file(File(v!.path),height: 65,width: 65,),
             ),
             Positioned(

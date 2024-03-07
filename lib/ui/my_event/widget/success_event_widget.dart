@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:popple/ext/hex_color.dart';
 import 'package:popple/ui/widgets/button_primary_widget.dart';
 import 'package:popple/ui/widgets/header_txt_widget.dart';
-import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
 import '../../../Constant/color_const.dart';
-import '../../../Models/event_response.dart';
 import '../../../generated/assets.dart';
-import '../../../generated/l10n.dart';
 import '../../dashboard/dashboard_controller.dart';
 
 class SuccessEventWidget extends StatelessWidget {
-  SuccessEventWidget();
+  const SuccessEventWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class SuccessEventWidget extends StatelessWidget {
             Container(
               alignment: AlignmentDirectional.center,
               margin: const EdgeInsets.all(20),
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   color: Colors.white

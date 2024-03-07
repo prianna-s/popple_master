@@ -10,7 +10,7 @@ import '../../../Constant/color_const.dart';
 import '../../../generated/assets.dart';
 
 class GroupWidget extends StatelessWidget {
-  GroupWidget();
+  const GroupWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,10 @@ class GroupWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
                 color: '#F6C2CC'.toColor(),
               ),
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               child: Image.asset(Assets.dummyImg4,
                 width: 70,
                 height: 70,

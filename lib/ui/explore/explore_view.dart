@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,6 +14,8 @@ import 'package:popple/ui/widgets/loading_widget.dart';
 import 'package:popple/ui/widgets/sub_txt_widget.dart';
 import 'explore_controller.dart';
 class ExplorePage extends StatefulWidget {
+  const ExplorePage({super.key});
+
   @override
   State<ExplorePage> createState() => _pageState();
 }
@@ -74,7 +75,7 @@ class _pageState extends State<ExplorePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   child: HeaderTxtWidget(
                     ' popple 🎸🤟🎉',
                     color: Colors.white,
@@ -98,7 +99,7 @@ class _pageState extends State<ExplorePage> {
       return LoadingWidget();
     }
     if(_con.feturedEvent.isEmpty){
-      return SizedBox();
+      return const SizedBox();
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,7 +118,7 @@ class _pageState extends State<ExplorePage> {
         ),
         Container(
           height: 270,
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           child: ListView.builder(
             itemBuilder: (context, index) {
               return EventCardWidget(_con.feturedEvent[index]);
@@ -178,7 +179,7 @@ class _pageState extends State<ExplorePage> {
                 fontFamily: "Chillax",
               )),
               SubTxtWidget('happening tonight'),
-              Icon(Icons.arrow_right)
+              const Icon(Icons.arrow_right)
             ],
           ),
         ),
@@ -239,13 +240,13 @@ class _pageState extends State<ExplorePage> {
       backgroundColor: Colors.white,
       isScrollControlled: true,
       builder: (context) {
-        return FilterWidget();
+        return const FilterWidget();
       },
     );
   }
   Widget _groupTile(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Card(
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
         color: Colors.white,
@@ -263,7 +264,7 @@ class _pageState extends State<ExplorePage> {
                     SubTxtWidget('HOT: 4 Mutuals',color: primaryColorCode,italic: true,fontWeight: FontWeight.w300,fontSize: 12,),
                   ],
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Row(
                   children: [
                     SubTxtWidget('is going to',fontSize: 10,fontWeight: FontWeight.w500,italic: true,),
@@ -272,17 +273,17 @@ class _pageState extends State<ExplorePage> {
                           shape: BoxShape.circle,
                           color: Colors.grey.shade300
                       ),
+                      padding: const EdgeInsets.all(2),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       child: Image.asset(Assets.imgFlam,width: 10,),
-                      padding: EdgeInsets.all(2),
-                      margin: EdgeInsets.symmetric(horizontal: 5),
                     ),
                     SubTxtWidget('Popple Launch Party',fontSize: 10,fontWeight: FontWeight.w500,italic: true,),
                   ],
 
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 SubTxtWidget('A couple cool girls looking for new friends!!! Would love to get ready together  ',fontWeight: FontWeight.w500,fontSize: 16,),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
                     Container(
@@ -323,7 +324,7 @@ class _pageState extends State<ExplorePage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
               ],
             ),
           ),
@@ -336,7 +337,7 @@ class _pageState extends State<ExplorePage> {
   }
   Widget _searchWidget(context){
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: SearchBar(
           backgroundColor:
           MaterialStatePropertyAll("#615BC9".toColor()),

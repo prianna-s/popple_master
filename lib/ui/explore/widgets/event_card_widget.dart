@@ -14,7 +14,7 @@ import '../explore_controller.dart';
 
 class EventCardWidget extends StatelessWidget {
   EventData data;
-  EventCardWidget(this.data);
+  EventCardWidget(this.data, {super.key});
   final _con = Get.put(ExploreController());
 
   @override
@@ -42,7 +42,7 @@ class EventCardWidget extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           color: Colors.white
                       ),
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: SubTxtWidget(data.date!.toSplitDate(),textAlign: TextAlign.center,color: color_EE4266,),
                     )),
                     Positioned(top:5,right:5,child: InkWell(
@@ -52,7 +52,7 @@ class EventCardWidget extends StatelessWidget {
                             color: Colors.white70
                         ),
                         padding: const EdgeInsets.all(5),
-                          child:data.post_saved!="No"?Icon(Icons.bookmark,color: primaryColorCode,):SvgPicture.asset(Assets.svgSaved)
+                          child:data.post_saved!="No"?const Icon(Icons.bookmark,color: primaryColorCode,):SvgPicture.asset(Assets.svgSaved)
                       ),
                       onTap: (){
                         setState((){

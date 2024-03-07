@@ -26,27 +26,27 @@ import '../ui/signup/signup_view.dart';
 appRoutes() => [
       GetPage(
         name: '/splash',
-        page: () => SplashPage(),
+        page: () => const SplashPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/login',
-        page: () => LoginPage(),
+        page: () => const LoginPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/signup',
-        page: () => SignupPage(),
+        page: () => const SignupPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/dashboard',
-        page: () => DashboardPage(),
+        page: () => const DashboardPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/my_event',
-        page: () => MyEventPage(),
+        page: () => const MyEventPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
@@ -81,12 +81,12 @@ appRoutes() => [
       ),
       GetPage(
         name: '/my_event_details',
-        page: () => MyEventDetailsPage(),
+        page: () => const MyEventDetailsPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/event_details',
-        page: () => EventDetailsPage(),
+        page: () => const EventDetailsPage(),
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
@@ -110,19 +110,19 @@ Route? onGenerateRoute(RouteSettings settings) {
   if (settings.name == '0') {
     return GetPageRoute(
       settings: settings,
-      page: () => ExplorePage(),
+      page: () => const ExplorePage(),
     );
   }
   if (settings.name == '1') {
     return GetPageRoute(
       settings: settings,
-      page: () => SavedPage(),
+      page: () => const SavedPage(),
     );
   }
   if (settings.name == '2') {
     return GetPageRoute(
       settings: settings,
-      page: () => MyGroupPage(),
+      page: () => const MyGroupPage(),
     );
   }
   if (settings.name == '3') {

@@ -10,7 +10,7 @@ import '../../widgets/network_image_widget.dart';
 
 class InterestChipWidget extends StatelessWidget {
   Function(Interest val)? onSelect;
-  InterestChipWidget({this.onSelect});
+  InterestChipWidget({super.key, this.onSelect});
   final _con = Get.put(DashboardController());
 
   @override
@@ -54,7 +54,7 @@ class InterestChipWidget extends StatelessWidget {
           itemBuilder: (context, index) {
             Interest data=_con.interestList[index];
             return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 3),
               child: ActionChip(
                 label: SubTxtWidget(
                   data.name!,
@@ -62,14 +62,14 @@ class InterestChipWidget extends StatelessWidget {
                   italic: true,
                   fontWeight: FontWeight.w200,
                 ),
-                avatar:onSelect!=null&&data.selected!?Icon(Icons.check_circle,color:Colors.white,size: 25,):NetworkImageWidget(url: data.image!,height: 30,width: 30,),
+                avatar:onSelect!=null&&data.selected!?const Icon(Icons.check_circle,color:Colors.white,size: 25,):NetworkImageWidget(url: data.image!,height: 30,width: 30,),
                 backgroundColor: data.colorCode!.toColor(),
                 shape: const StadiumBorder(
                     side: BorderSide(color: Colors.transparent)),
                 elevation: 5,
                 onPressed: () {
                   if(onSelect!=null){
-                    _con.interestList.forEach((element) {element.selected=false;});
+                    for (var element in _con.interestList) {element.selected=false;}
                     data.selected=true;
                     onSelect!.call(data);
                     setState((){});

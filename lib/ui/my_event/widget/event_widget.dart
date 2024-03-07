@@ -14,7 +14,7 @@ import '../../../generated/l10n.dart';
 
 class EventWidget extends StatelessWidget {
   EventData data;
-  EventWidget(this.data);
+  EventWidget(this.data, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class EventWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
                 color: '#F6C2CC'.toColor(),
               ),
               padding: const EdgeInsets.all(5),

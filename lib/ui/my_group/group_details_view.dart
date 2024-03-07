@@ -27,7 +27,7 @@ class GroupDetailsPage extends StatelessWidget {
             elevation: 1,
             leadingWidth: 50,
             title: HeaderTxtWidget('Details',color: Colors.white,fontSize: 24,),
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
               color: Colors.white
             ),
             flexibleSpace: FlexibleSpaceBar(
@@ -83,7 +83,7 @@ class GroupDetailsPage extends StatelessWidget {
                       alignment: AlignmentDirectional.center,
                       decoration:  BoxDecoration(
                           color: _con.type.value=="event"?Colors.white:Colors.transparent,
-                          borderRadius: BorderRadius.all(Radius.circular(30))
+                          borderRadius: const BorderRadius.all(Radius.circular(30))
                       ),
                       child: HeaderTxtWidget('EVENT',color: _con.type.value=="event"?"#5669FF".toColor():"#9B9B9B".toColor(),
                       fontWeight: FontWeight.w700,),
@@ -105,12 +105,12 @@ class GroupDetailsPage extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(right: 10),
+                            margin: const EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
                                 color: "#5669FF".toColor().withOpacity(0.1),
-                                borderRadius: BorderRadius.all(Radius.circular(10))
+                                borderRadius: const BorderRadius.all(Radius.circular(10))
                             ),
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             child: SvgPicture.asset(Assets.svgUser,height: 22,width: 22,),
                           ),
                           SubTxtWidget('3 to 6 Members'),
@@ -123,7 +123,7 @@ class GroupDetailsPage extends StatelessWidget {
                       const SizedBox(height: 10,),
                       HeaderTxtWidget('Interests',fontSize: 18,fontWeight: FontWeight.w800,),
                       Wrap(children: [
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Concerts",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#EEB868'.toColor(),
@@ -132,7 +132,7 @@ class GroupDetailsPage extends StatelessWidget {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("R&B",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#EF767A'.toColor(),
@@ -141,7 +141,7 @@ class GroupDetailsPage extends StatelessWidget {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Fashion",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#DC42BF'.toColor(),
@@ -150,7 +150,7 @@ class GroupDetailsPage extends StatelessWidget {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Art",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#8D85F0'.toColor(),
@@ -159,7 +159,7 @@ class GroupDetailsPage extends StatelessWidget {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Love Island",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#273E47'.toColor(),
@@ -228,9 +228,9 @@ class GroupDetailsPage extends StatelessWidget {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: SvgPicture.asset(Assets.svgCalender,height: 32,width: 32,),
                         ),
                         title: SubTxtWidget('13 April, 2023',color: "#120D26".toColor(),
@@ -242,9 +242,9 @@ class GroupDetailsPage extends StatelessWidget {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: SvgPicture.asset(Assets.svgAddress,height: 32,width: 32,),
                         ),
                         title: SubTxtWidget('Wonderland House',color: "#120D26".toColor(),
@@ -256,7 +256,7 @@ class GroupDetailsPage extends StatelessWidget {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
                           child: Image.asset(Assets.dummyImg8,height: 46,width: 46,),
                         ),
@@ -288,7 +288,7 @@ class GroupDetailsPage extends StatelessWidget {
               Container(
                 alignment: AlignmentDirectional.center,
                 margin: const EdgeInsets.all(20),
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     color: Colors.white

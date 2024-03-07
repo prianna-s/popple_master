@@ -12,6 +12,8 @@ import '../widgets/app_bar_widget.dart';
 import '../widgets/header_txt_widget.dart';
 import 'my_event_controller.dart';
 class MyEventPage extends StatefulWidget {
+  const MyEventPage({super.key});
+
   @override
   State<MyEventPage> createState() => _pageState();
 }

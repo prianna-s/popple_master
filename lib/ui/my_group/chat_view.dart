@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:popple/Constant/color_const.dart';
 import 'package:popple/ext/hex_color.dart';
-import 'package:popple/ui/my_group/widget/group_widget.dart';
 import 'package:popple/ui/widgets/input_widget.dart';
 import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
@@ -25,7 +24,7 @@ class ChatPage extends StatelessWidget {
         borderRadius: BorderRadius.zero,
         title: HeaderTxtWidget("Just the Girls 🥰🥰",fontSize: 24,color: Colors.white,),
         bottom: Container(
-          padding: EdgeInsets.only(bottom: 10,left: 10),
+          padding: const EdgeInsets.only(bottom: 10,left: 10),
           child: Row(
             children: [
               Image.asset(Assets.dummyImg5,height: 55,width: 55,),
@@ -38,7 +37,7 @@ class ChatPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(topRight: Radius.circular(33),topLeft: Radius.circular(33))
         ),
@@ -71,7 +70,7 @@ class ChatPage extends StatelessWidget {
   }
   Widget _leftTile(){
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -82,11 +81,11 @@ class ChatPage extends StatelessWidget {
             children: [
               SubTxtWidget('Lara Smith',fontSize: 10,color: "#000E08".toColor(),),
               Container(
-                padding: EdgeInsets.all(5),
-                margin: EdgeInsets.only(top: 5,bottom: 5),
+                padding: const EdgeInsets.all(5),
+                margin: const EdgeInsets.only(top: 5,bottom: 5),
                 decoration: BoxDecoration(
                   color: '#F2F7FB'.toColor(),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
                 ),
                 child: SubTxtWidget('Hey girlies!! So excited 4 this!!',fontSize: 14,fontWeight: FontWeight.w400,
                 color: "#000E08".toColor(),),

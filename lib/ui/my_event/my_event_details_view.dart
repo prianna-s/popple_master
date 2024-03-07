@@ -7,6 +7,8 @@ import 'package:popple/ui/widgets/sub_txt_widget.dart';
 import '../../generated/assets.dart';
 import '../widgets/header_txt_widget.dart';
 class MyEventDetailsPage extends StatefulWidget {
+  const MyEventDetailsPage({super.key});
+
   @override
   State<MyEventDetailsPage> createState() => _pageState();
 }
@@ -31,7 +33,7 @@ class _pageState extends State<MyEventDetailsPage> {
             elevation: 1,
             leadingWidth: 50,
             title: HeaderTxtWidget('RSVP Details',color: Colors.white,fontSize: 24,),
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
               color: Colors.white
             ),
             flexibleSpace: FlexibleSpaceBar(
@@ -47,7 +49,7 @@ class _pageState extends State<MyEventDetailsPage> {
               ),
             ),
           ),
-          Obx(() =>_con.data.value==null?CircularProgressIndicator():SliverList(
+          Obx(() =>_con.data.value==null?const CircularProgressIndicator():SliverList(
               delegate: SliverChildListDelegate.fixed([
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -61,12 +63,12 @@ class _pageState extends State<MyEventDetailsPage> {
                       Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(right: 10),
+                            margin: const EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
                                 color: "#5669FF".toColor().withOpacity(0.1),
-                                borderRadius: BorderRadius.all(Radius.circular(10))
+                                borderRadius: const BorderRadius.all(Radius.circular(10))
                             ),
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             child: SvgPicture.asset(Assets.svgUser,height: 22,width: 22,),
                           ),
                           SubTxtWidget('300 Total RSVPs'),

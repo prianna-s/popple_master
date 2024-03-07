@@ -14,7 +14,7 @@ class SubTxtWidget extends StatelessWidget {
   FontWeight? fontWeight;
 
   SubTxtWidget(this.txt,
-      {this.textAlign,
+      {super.key, this.textAlign,
       this.maxLines,
       this.color,
       this.fontSize = 16,

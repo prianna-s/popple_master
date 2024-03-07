@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:popple/ext/hex_color.dart';
-import 'package:popple/ui/explore/widgets/event_card_widget.dart';
 import 'package:popple/ui/explore/widgets/interest_chip_widget.dart';
 
 import '../../generated/assets.dart';
 import '../explore/widgets/event_list_widget.dart';
-import '../my_event/widget/event_widget.dart';
 import '../widgets/header_txt_widget.dart';
 import '../widgets/loading_widget.dart';
 import '../widgets/sub_txt_widget.dart';
 import 'saved_controller.dart';
 class SavedPage extends StatefulWidget {
+  const SavedPage({super.key});
+
   @override
   State<SavedPage> createState() => _pageState();
 }
@@ -57,9 +57,9 @@ class _pageState extends State<SavedPage> {
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
-                 Padding(padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                 Padding(padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                    child: HeaderTxtWidget('Saved',color: Colors.white,fontWeight: FontWeight.w800,fontSize: 34,),),
-                 Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+                 Padding(padding: const EdgeInsets.symmetric(horizontal: 15),
                    child: SearchBar(
                        backgroundColor:  MaterialStatePropertyAll("#615BC9".toColor()),
                        elevation: const MaterialStatePropertyAll(0),

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:popple/Constant/color_const.dart';
-import 'package:popple/ui/widgets/header_txt_widget.dart';
 
 
 class CustomSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
 
-  CustomSwitch({Key? key, required this.value, required this.onChanged})
+  const CustomSwitch({Key? key, required this.value, required this.onChanged})
       : super(key: key);
 
   @override
@@ -24,7 +22,7 @@ class _CustomSwitchState extends State<CustomSwitch>
   void initState() {
     super.initState();
     _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 60),);
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 60),);
     _circleAnimation = AlignmentTween(
         begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
         end: widget.value ? Alignment.centerLeft : Alignment.centerRight)

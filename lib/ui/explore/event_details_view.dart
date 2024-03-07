@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,6 +13,8 @@ import '../widgets/button_primary_widget.dart';
 import '../widgets/header_txt_widget.dart';
 import '../widgets/network_image_widget.dart';
 class EventDetailsPage extends StatefulWidget {
+  const EventDetailsPage({super.key});
+
   @override
   State<EventDetailsPage> createState() => _pageState();
 }
@@ -66,13 +67,13 @@ class _pageState extends State<EventDetailsPage> {
             ),
             actions: [
               Container(
-                margin: EdgeInsets.only(right: 20),
+                margin: const EdgeInsets.only(right: 20),
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     color: Colors.white70
                 ),
-                padding: EdgeInsets.all(5),
-                child:_con.data.value!.post_saved=="No"?SvgPicture.asset(Assets.svgSaved):Icon(Icons.bookmark,color: primaryColorCode,),
+                padding: const EdgeInsets.all(5),
+                child:_con.data.value!.post_saved=="No"?SvgPicture.asset(Assets.svgSaved):const Icon(Icons.bookmark,color: primaryColorCode,),
               )
             ],
             flexibleSpace: FlexibleSpaceBar(
@@ -92,7 +93,7 @@ class _pageState extends State<EventDetailsPage> {
               ),
             ),
           ),
-          Obx(() => _con.data.value==null?CircularProgressIndicator():SliverList(
+          Obx(() => _con.data.value==null?const CircularProgressIndicator():SliverList(
               delegate: SliverChildListDelegate.fixed([
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -108,9 +109,9 @@ class _pageState extends State<EventDetailsPage> {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: SvgPicture.asset(Assets.svgCalender,height: 32,width: 32,),
                         ),
                         title: SubTxtWidget(Tools.changeDateFormat('${_con.data.value!.date}', "dd-MMM-yyyy"),color: "#120D26".toColor(),
@@ -122,9 +123,9 @@ class _pageState extends State<EventDetailsPage> {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: SvgPicture.asset(Assets.svgAddress,height: 32,width: 32,),
                         ),
                         title: SubTxtWidget('Wonderland House',color: "#120D26".toColor(),
@@ -142,7 +143,7 @@ class _pageState extends State<EventDetailsPage> {
                         leading: Container(
                           decoration: BoxDecoration(
                               color: "#5669FF".toColor().withOpacity(0.1),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                           ),
                           child: Image.asset(Assets.dummyImg8,height: 46,width: 46,),
                         ),
@@ -157,7 +158,7 @@ class _pageState extends State<EventDetailsPage> {
                       HeaderTxtWidget('Categories',fontSize: 18,fontWeight: FontWeight.w800),
                       const SizedBox(height: 10,),
                       Wrap(children: [
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Concerts",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#EEB868'.toColor(),
@@ -166,7 +167,7 @@ class _pageState extends State<EventDetailsPage> {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("R&B",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#EF767A'.toColor(),
@@ -175,7 +176,7 @@ class _pageState extends State<EventDetailsPage> {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Fashion",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#DC42BF'.toColor(),
@@ -184,7 +185,7 @@ class _pageState extends State<EventDetailsPage> {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Art",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#8D85F0'.toColor(),
@@ -193,7 +194,7 @@ class _pageState extends State<EventDetailsPage> {
                             onPressed: (){
 
                             },),),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                        Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                           child: ActionChip(label: SubTxtWidget("Love Island",color: Colors.white,
                             italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                             backgroundColor: '#273E47'.toColor(),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:popple/Constant/color_const.dart';
-import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
@@ -13,6 +11,8 @@ import 'signup_controller.dart';
 
 
 class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
+
   @override
   State<SignupPage> createState() => _LoginPageState();
 }
@@ -54,7 +54,7 @@ class _LoginPageState extends State<SignupPage> {
                             hint: S.of(context).fullName,
                             validator: ValidationType.TEXT,
                             prefixIcon: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               child: SvgPicture.asset(Assets.svgProfile),
                             ),
                             errorMsg: S.of(context).pleaseEnterFullName,
@@ -64,7 +64,7 @@ class _LoginPageState extends State<SignupPage> {
                             hint: S.of(context).abcemailcom,
                             validator: ValidationType.EMAIL,
                             prefixIcon: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               child: SvgPicture.asset(Assets.svgMail),
                             ),
                             errorMsg: S.of(context).pleaseEnterEmail,
@@ -128,7 +128,7 @@ class _LoginPageState extends State<SignupPage> {
   }
   Widget _privacyPolicy(){
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       alignment: AlignmentDirectional.centerStart,
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,

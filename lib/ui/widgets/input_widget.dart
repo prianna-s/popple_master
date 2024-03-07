@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:popple/Utils/tools.dart';
 import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
@@ -30,7 +29,7 @@ class InputWidget extends StatelessWidget {
   Widget? child;
   EdgeInsets? contentPadding;
   String? errorMsg;
-  InputWidget({this.controller,
+  InputWidget({super.key, this.controller,
     this.inputType = TextInputType.text,
     this.sufix,
     this.title,
@@ -116,7 +115,7 @@ class InputWidget extends StatelessWidget {
                 BorderSide(width: 1, color: color??Colors.red),
                 borderRadius: BorderRadius.circular(radius??12.0),
               ),
-              errorStyle: TextStyle(color: Colors.red),
+              errorStyle: const TextStyle(color: Colors.red),
               border: OutlineInputBorder(
                 borderSide:
                 BorderSide(width: 1, color: color??color_E4DFDF),

@@ -2,7 +2,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
 class GlobalConfiguration {
-  static GlobalConfiguration _singleton = GlobalConfiguration._internal();
+  static final GlobalConfiguration _singleton = GlobalConfiguration._internal();
 
   factory GlobalConfiguration() {
     return _singleton;
@@ -10,7 +10,7 @@ class GlobalConfiguration {
 
   GlobalConfiguration._internal();
 
-  Map<String, dynamic> appConfig = Map<String, dynamic>();
+  Map<String, dynamic> appConfig = <String, dynamic>{};
 
   GlobalConfiguration loadFromMap(Map<String, dynamic> map) {
     appConfig.addAll(map);

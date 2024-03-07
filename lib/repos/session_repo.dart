@@ -39,23 +39,23 @@ Future<bool> isLogin() async{
 const String prefSelectedLanguageCode = "SelectedLanguageCode";
 
 void setLocale(String languageCode) async {
-  SharedPreferences _prefs = await SharedPreferences.getInstance();
-  await _prefs.setString(prefSelectedLanguageCode, languageCode);
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setString(prefSelectedLanguageCode, languageCode);
   Locale ll=_locale(languageCode);
 
 }
 
 Future<Locale> getLocale() async {
-  SharedPreferences _prefs = await SharedPreferences.getInstance();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   final List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
   print('languageCode ${systemLocales.first.languageCode}');
-  String languageCode = _prefs.getString(prefSelectedLanguageCode) ?? systemLocales.first.languageCode;
+  String languageCode = prefs.getString(prefSelectedLanguageCode) ?? systemLocales.first.languageCode;
   return _locale(languageCode);
 }
 
 Locale _locale(String languageCode) {
   final List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
-  return languageCode != null && languageCode.isNotEmpty
+  return languageCode.isNotEmpty
       ? Locale(languageCode, '')
       : Locale(systemLocales.first.languageCode, '');
 }

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:popple/ext/hex_color.dart';
-import 'package:popple/ui/my_event/widget/event_widget.dart';
 
-import '../../Constant/color_const.dart';
 import '../../generated/assets.dart';
 import '../my_event/my_event_controller.dart';
 import '../widgets/app_bar_widget.dart';
@@ -49,7 +47,7 @@ class GroupPage extends StatelessWidget {
   }
   Widget _groupTile(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Card(
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
         color: Colors.white,
@@ -61,10 +59,10 @@ class GroupPage extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
                     color: '#F6C2CC'.toColor(),
                   ),
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   child: Image.asset(Assets.dummyImg4,
                     width: 70,
                     height: 70,
@@ -76,7 +74,7 @@ class GroupPage extends StatelessWidget {
                   children: [
                     SubTxtWidget('Just the Girls',fontWeight: FontWeight.w500,fontSize: 16,),
                     SubTxtWidget('A couple cool girls looking for new friends!!! Would love to get ready together  ',fontWeight: FontWeight.w500,fontSize: 14,),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(

@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_places_autocomplete_widgets/address_autocomplete_widgets.dart';
 import 'package:image_picker/image_picker.dart';
@@ -35,19 +33,11 @@ class MyEventController extends GetxController {
   Rx<EventData?> data=Rx(null);
   final Completer<GoogleMapController> map_controller = Completer<GoogleMapController>();
   Rx<Map<MarkerId, Marker>> markers = Rx(<MarkerId, Marker>{});
-  CameraPosition kGooglePlex = CameraPosition(
+  CameraPosition kGooglePlex = const CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
   void initMyEvent(){
     getMyEventList().then((value){
       eventResponse.value=value;
@@ -91,12 +81,12 @@ class MyEventController extends GetxController {
     addEventListener(map,file).then((value){
       isLoading.value=false;
       showDialog(context: Get.context!, builder: (context) {
-        return SuccessEventWidget();
+        return const SuccessEventWidget();
       },);
     });
   }
   Future<void> addMarker() async {
-    final MarkerId markerId = MarkerId("24fdff");
+    const MarkerId markerId = MarkerId("24fdff");
     final Marker marker = Marker(
       markerId: markerId,
       icon: BitmapDescriptor.defaultMarker,

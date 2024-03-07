@@ -1,12 +1,8 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'common_constant.dart';
-import 'enums.dart';
 import 'global_configuration.dart';
 
 BaseOptions options = BaseOptions(
@@ -42,7 +38,7 @@ Dio httpClient() {
 }
 
 Dio httpClientWithHeader() {
-  Map<String,dynamic>header=Map();
+  Map<String,dynamic>header={};
   // header['Authorization']='Bearer ${setting.value.authToken}';
   _apiDio.options.headers=header;
     _apiDio.interceptors.add(PrettyDioLogger(
@@ -62,11 +58,6 @@ Dio httpClientWithHeader() {
 
 
 class HeaderInterceptor extends Interceptor {
-  @override
-  void onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
-    return super.onRequest(options, handler);
-  }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {

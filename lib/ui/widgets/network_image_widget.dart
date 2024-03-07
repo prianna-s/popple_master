@@ -9,7 +9,7 @@ double? width;
 double? height;
 BoxFit fit;
 Function()?onTap;
-NetworkImageWidget({required this.url,this.width,this.height,this.fit=BoxFit.fill,this.onTap});
+NetworkImageWidget({super.key, required this.url,this.width,this.height,this.fit=BoxFit.fill,this.onTap});
 
   @override
   Widget build(BuildContext context) {

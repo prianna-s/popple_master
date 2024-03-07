@@ -47,16 +47,16 @@ class ProfilePage extends StatelessWidget {
   }
   Widget tile({required String assetName,required String name,onTap}){
     return Container(
-      padding: EdgeInsets.all(18),
-      margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+      padding: const EdgeInsets.all(18),
+      margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
                 color: "#575C8A0F".toColor(),
                 blurRadius: 5,
-                offset: Offset(0.2,0.8)
+                offset: const Offset(0.2,0.8)
             )
           ]
       ),
@@ -65,12 +65,12 @@ class ProfilePage extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              margin: EdgeInsets.only(right: 10),
+              margin: const EdgeInsets.only(right: 10),
               decoration: BoxDecoration(
                   color: "#5669FF".toColor().withOpacity(0.1),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: SvgPicture.asset(assetName,height: 22,width: 22,),
             ),
             Expanded(child: HeaderTxtWidget(name,fontSize: 20,fontWeight: FontWeight.w500,)),

@@ -8,7 +8,10 @@ import '../../services/route_generator.dart';
 import 'dashboard_controller.dart';
 
 class DashboardPage extends GetView<DashboardController> {
+  @override
   final controller = Get.put(DashboardController());
+
+  const DashboardPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +94,7 @@ class DashboardPage extends GetView<DashboardController> {
               type: BottomNavigationBarType.fixed,
               showUnselectedLabels: true,
               showSelectedLabels: true,
-              selectedLabelStyle: TextStyle(
+              selectedLabelStyle: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
               ),

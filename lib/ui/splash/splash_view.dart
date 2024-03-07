@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
     final controller = Get.put(SplashController());
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.all(50),
+      padding: const EdgeInsets.all(50),
       child: Image.asset(Assets.imgLogoWithIcon),
     );
   }

@@ -33,7 +33,7 @@ class EditProfilePage extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +49,7 @@ class EditProfilePage extends StatelessWidget {
               HeaderTxtWidget('Interests',fontSize: 18,fontWeight: FontWeight.w800),
               const SizedBox(height: 10,),
               Wrap(children: [
-                Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ActionChip(label: SubTxtWidget("Concerts",color: Colors.white,
                     italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                     backgroundColor: '#EEB868'.toColor(),
@@ -58,7 +58,7 @@ class EditProfilePage extends StatelessWidget {
                     onPressed: (){
 
                     },),),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ActionChip(label: SubTxtWidget("R&B",color: Colors.white,
                     italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                     backgroundColor: '#EF767A'.toColor(),
@@ -67,7 +67,7 @@ class EditProfilePage extends StatelessWidget {
                     onPressed: (){
 
                     },),),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ActionChip(label: SubTxtWidget("Fashion",color: Colors.white,
                     italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                     backgroundColor: '#DC42BF'.toColor(),
@@ -76,7 +76,7 @@ class EditProfilePage extends StatelessWidget {
                     onPressed: (){
 
                     },),),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ActionChip(label: SubTxtWidget("Art",color: Colors.white,
                     italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                     backgroundColor: '#8D85F0'.toColor(),
@@ -85,7 +85,7 @@ class EditProfilePage extends StatelessWidget {
                     onPressed: (){
 
                     },),),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 3),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ActionChip(label: SubTxtWidget("Love Island",color: Colors.white,
                     italic: true,fontWeight: FontWeight.w200,fontSize: 13,),
                     backgroundColor: '#273E47'.toColor(),
@@ -112,16 +112,16 @@ class EditProfilePage extends StatelessWidget {
   }
   Widget tile({required String assetName,required String name,onTap}){
     return Container(
-      padding: EdgeInsets.all(18),
-      margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+      padding: const EdgeInsets.all(18),
+      margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
                 color: "#575C8A0F".toColor(),
                 blurRadius: 5,
-                offset: Offset(0.2,0.8)
+                offset: const Offset(0.2,0.8)
             )
           ]
       ),
@@ -130,12 +130,12 @@ class EditProfilePage extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              margin: EdgeInsets.only(right: 10),
+              margin: const EdgeInsets.only(right: 10),
               decoration: BoxDecoration(
                   color: "#5669FF".toColor().withOpacity(0.1),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: SvgPicture.asset(assetName,height: 22,width: 22,),
             ),
             Expanded(child: HeaderTxtWidget(name,fontSize: 20,fontWeight: FontWeight.w500,)),

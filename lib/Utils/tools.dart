@@ -1,6 +1,4 @@
-import 'dart:typed_data';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart' show DateFormat;
@@ -22,13 +20,13 @@ static void ShowErrorMessage(message){
 static bool isEmailValid(email){
     return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
 }
-  static String changeDateFormat(String date,String format_type){
+  static String changeDateFormat(String date,String formatType){
     final format22 =  DateFormat('yyyy-MM-dd HH:mm:ssZ','en-US');
-    DateFormat format=DateFormat(format_type);
+    DateFormat format=DateFormat(formatType);
     DateTime dateTime=format22.parse(DateTime.parse(date).toLocal().toString());
     try {
       return format.format(dateTime);
-    } catch (e, s) {
+    } catch (e) {
       return date;
     }
 
@@ -38,25 +36,25 @@ static bool isEmailValid(email){
     return format.parse(date);
 
   }
-  static String changeDateFormat2(String date,String format_type,String old_format){
-    final format22 =  DateFormat(old_format);
-    DateFormat format=DateFormat(format_type);
+  static String changeDateFormat2(String date,String formatType,String oldFormat){
+    final format22 =  DateFormat(oldFormat);
+    DateFormat format=DateFormat(formatType);
     DateTime dateTime=format22.parse(DateTime.parse(date).toString());
     try {
       return format.format(dateTime);
-    } catch (e, s) {
+    } catch (e) {
       return date;
     }
 
   }
   static String changeTimeFormat(String time){
-    final format22 = new DateFormat('HH:mm','en-US');
+    final format22 = DateFormat('HH:mm','en-US');
     DateFormat format=DateFormat("hh:mm a");
     DateTime dateTime=format22.parse(time);
     return format.format(dateTime);
   }
   static String changeTimeFormat2(String time){
-    final format22 = new DateFormat('HH:mm:ss','en-US');
+    final format22 = DateFormat('HH:mm:ss','en-US');
     DateFormat format=DateFormat("HH:mm");
     DateTime dateTime=format22.parse(time);
     return format.format(dateTime);
@@ -67,15 +65,15 @@ static bool isEmailValid(email){
     return dateTime.month.toDouble();
   }
   static bool isExpire(String date){
-    final old_format =  DateFormat('yyyy-MM-dd HH:mm:ssZ',"en");
-    DateTime dateTime=old_format.parse(date.replaceAll("T", " "));
+    final oldFormat =  DateFormat('yyyy-MM-dd HH:mm:ssZ',"en");
+    DateTime dateTime=oldFormat.parse(date.replaceAll("T", " "));
     DateTime newDate=DateTime.now();
     int leftDays=dateTime.difference(newDate).inDays;
     return leftDays<0;
   }
   static bool isAvailableFoCancel(String date){
-    final old_format =  DateFormat('dd MMM yyyy');
-    DateTime dateTime=old_format.parse(date);
+    final oldFormat =  DateFormat('dd MMM yyyy');
+    DateTime dateTime=oldFormat.parse(date);
     DateTime newDate=DateTime.now();
     int leftDays=dateTime.difference(newDate).inDays;
     return leftDays>0;

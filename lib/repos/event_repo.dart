@@ -32,7 +32,7 @@ Future<EventResponse>getSavedEventList({cat_id="",search_text=""}) async {
 Future<BasicResponse>addEventListener(Map<String,dynamic> map,rx.RxList<XFile?>file) async {
   List<MultipartFile>fileList=[];
   for (var element in file) {
-    MultipartFile file= await MultipartFile.fromFile(element!.path,filename: element!.name);
+    MultipartFile file= await MultipartFile.fromFile(element!.path,filename: element.name);
     fileList.add(file);
   }
   map['post_images[]']=fileList;

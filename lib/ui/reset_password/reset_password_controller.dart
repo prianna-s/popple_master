@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:popple/Models/user_details.dart';
 import 'package:popple/repos/setting_repo.dart';
 
 import '../../SnckBar/animated_snack_bar.dart';

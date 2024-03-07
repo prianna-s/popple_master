@@ -14,7 +14,7 @@ class HeaderTxtWidget extends StatelessWidget {
   FontWeight? fontWeight;
 
   HeaderTxtWidget(this.txt,
-      {this.fontWeight,
+      {super.key, this.fontWeight,
       this.textAlign,
       this.maxLines,
       this.color,

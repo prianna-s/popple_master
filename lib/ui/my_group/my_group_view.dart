@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:popple/ext/hex_color.dart';
-import 'package:popple/ui/my_group/widget/group_widget.dart';
 import 'package:popple/ui/widgets/sub_txt_widget.dart';
 
 import '../../generated/assets.dart';

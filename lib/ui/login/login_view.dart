@@ -12,6 +12,8 @@ import '../widgets/custom_switch.dart';
 import '../widgets/input_widget.dart';
 import 'login_controller.dart';
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -47,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                           Image.asset(Assets.imgLogoWithIcon,height: 120,),
                           const SizedBox(height: 30,),
                           Container(
-                            padding: EdgeInsets.only(left: 10,bottom: 10),
+                            padding: const EdgeInsets.only(left: 10,bottom: 10),
                             alignment: AlignmentDirectional.centerStart,
                             child:  HeaderTxtWidget('Sign in',fontSize: 24,fontWeight: FontWeight.w800,),
                           ),
@@ -56,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                             hint: S.of(context).abcemailcom,
                             validator: ValidationType.EMAIL,
                             prefixIcon: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               child: SvgPicture.asset(Assets.svgMail),
                             ),
                             errorMsg: S.of(context).pleaseEnterEmail,

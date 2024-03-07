@@ -14,7 +14,7 @@ import '../explore_controller.dart';
 
 class EventListWidget extends StatelessWidget {
   EventData data;
-  EventListWidget(this.data);
+  EventListWidget(this.data, {super.key});
   final _con = Get.put(ExploreController());
 
   @override
@@ -33,7 +33,7 @@ class EventListWidget extends StatelessWidget {
                 Stack(
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                       child: NetworkImageWidget(url: data.postImages!.isEmpty?"":data.postImages!.first.image.toString(),
                         height: 120,
                         fit: BoxFit.fill,),
@@ -43,7 +43,7 @@ class EventListWidget extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           color: Colors.white
                       ),
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: SubTxtWidget(data.date!.toSplitDate(),textAlign: TextAlign.center,color: color_EE4266,),
                     )),
                     Positioned(top:5,right:5,child: InkWell(
@@ -52,8 +52,8 @@ class EventListWidget extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             color: Colors.white70
                         ),
-                        padding: EdgeInsets.all(5),
-                        child:data.post_saved!="No"?Icon(Icons.bookmark,color: primaryColorCode,):SvgPicture.asset(Assets.svgSaved),
+                        padding: const EdgeInsets.all(5),
+                        child:data.post_saved!="No"?const Icon(Icons.bookmark,color: primaryColorCode,):SvgPicture.asset(Assets.svgSaved),
                       ),
                       onTap: (){
                         setState((){
@@ -64,7 +64,7 @@ class EventListWidget extends StatelessWidget {
                     )),
                   ],
                 ),
-                Padding(padding: EdgeInsets.all(10),
+                Padding(padding: const EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

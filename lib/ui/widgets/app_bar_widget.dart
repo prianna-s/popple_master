@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:popple/Constant/color_const.dart';
 import 'package:popple/ext/hex_color.dart';
 typedef callback = Function();
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -11,8 +9,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   bool showBackButton;
   BorderRadius? borderRadius;
   double? height;
-  AppBarWidget({this.bottom, this.onTap,this.title,this.margin,this.showBackButton=false,this.borderRadius,this.height});
+  AppBarWidget({super.key, this.bottom, this.onTap,this.title,this.margin,this.showBackButton=false,this.borderRadius,this.height});
   callback? onTap;
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration:  BoxDecoration(

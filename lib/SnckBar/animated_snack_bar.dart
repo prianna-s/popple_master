@@ -175,12 +175,12 @@ class AnimatedSnackBar {
         getInitialDy: () => snackBarStrategy.computeDy(_snackBars, this),
         duration: duration,
         onRemoved: remove,
-        child: builder.call(context),
         desktopSnackBarPosition: desktopSnackBarPosition,
         mobileSnackBarPosition: mobileSnackBarPosition,
         mobilePositionSettings: mobilePositionSettings,
         animationDuration: animationDuration,
         animationCurve: animationCurve,
+        child: builder.call(context),
       ),
     );
 
